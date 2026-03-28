@@ -23,31 +23,31 @@ function Contador() {
         </p>
     
       {/* Botón para incrementar el valor de count */}
-      <div style={{ display: 'flex', gap: '10px', justifyContent: 'center' }}>
+        <div style={{ display: 'flex', gap: '10px', justifyContent: 'center' }}>
         <button
-          onClick={() => setCount(prev => prev + 1)}
-          style={{ padding: '10px 16px', fontSize: '16px', cursor: 'pointer', backgroundColor: '#007bff', color: 'white', border: 'none', borderRadius: '5px' }}
-          aria-label="Incrementar"
+            onClick={() => setCount(prev => prev + 1)}
+            style={{ padding: '10px 16px', fontSize: '16px', cursor: 'pointer', backgroundColor: '#007bff', color: 'white', border: 'none', borderRadius: '5px' }}
+            aria-label="Incrementar"
         >
-          +
+            +
         </button>
 
         <button
-          onClick={() => setCount(prev => prev - 1)}
-          style={{ padding: '10px 16px', fontSize: '16px', cursor: 'pointer', backgroundColor: '#6c757d', color: 'white', border: 'none', borderRadius: '5px' }}
-          aria-label="Disminuir"
+            onClick={() => setCount(prev => prev - 1)}
+            style={{ padding: '10px 16px', fontSize: '16px', cursor: 'pointer', backgroundColor: '#6c757d', color: 'white', border: 'none', borderRadius: '5px' }}
+            aria-label="Disminuir"
         >
-          -
+            -
         </button>
 
         <button
-          onClick={() => setCount(0)}
-          style={{ padding: '10px 16px', fontSize: '16px', cursor: 'pointer', backgroundColor: '#dc3545', color: 'white', border: 'none', borderRadius: '5px' }}
-          aria-label="Resetear"
+            onClick={() => setCount(0)}
+            style={{ padding: '10px 16px', fontSize: '16px', cursor: 'pointer', backgroundColor: '#dc3545', color: 'white', border: 'none', borderRadius: '5px' }}
+            aria-label="Resetear"
         >
-          Reset
+            Reset
         </button>
-      </div>
+        </div>
     </div>
     );
 }
