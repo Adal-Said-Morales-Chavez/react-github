@@ -38,6 +38,9 @@ function Navbar() {
       <NavLink to="/acerca" style={getStyle}>
         👤 Acerca de mí
       </NavLink>
+      <NavLink to="/tablas" style={getStyle}>
+        📊 Tablas
+      </NavLink>
       <NavLink to="/contacto" style={getStyle}>
         ✉️ Contacto
       </NavLink>

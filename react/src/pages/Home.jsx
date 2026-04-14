@@ -1,5 +1,4 @@
 import Contador from "../Contador";
-import TablaPersonas from "../TablaPersonas";
 
 function Home() {
   return (
@@ -18,7 +17,6 @@ function Home() {
         Bienvenido a mi aplicación React con enrutamiento.
       </p>
       <Contador />
-      <TablaPersonas />
     </div>
   );
 }
