@@ -1,15 +1,20 @@
-
-import React from 'react'
-import Contador from './Contador'
-import TablaPersonas from './TablaPersonas'
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+import Acerca from "./pages/Acerca";
+import Contacto from "./pages/Contacto";
 
 function App() {
-	return (
-		<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', minHeight: '100vh' }}>
-			<Contador />
-			<TablaPersonas />
-		</div>
-	)
+  return (
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/acerca" element={<Acerca />} />
+        <Route path="/contacto" element={<Contacto />} />
+      </Routes>
+    </>
+  );
 }
 
-export default App
+export default App;
