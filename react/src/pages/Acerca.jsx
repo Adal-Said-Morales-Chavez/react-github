@@ -1,6 +1,8 @@
 import perfilImg from "../assets/perfil.jpg";
+import { useAlumnoContext } from "../context/AlumnoContext";
 
 function Acerca() {
+  const { alumno } = useAlumnoContext();
   const habilidades = ["HTML", "CSS", "JavaScript", "React"];
 
   return (
@@ -42,10 +44,16 @@ function Acerca() {
         </div>
 
         <p style={{ fontSize: "18px", marginBottom: "8px" }}>
-          <strong>Nombre:</strong> Adal Said Morales Chavez
+          <strong>Nombre:</strong> {alumno.nombre}
         </p>
         <p style={{ fontSize: "18px", marginBottom: "8px" }}>
-          <strong>Carrera:</strong> Ingeniería en Sistemas
+          <strong>Carrera:</strong> {alumno.carrera}
+        </p>
+        <p style={{ fontSize: "18px", marginBottom: "8px" }}>
+          <strong>Grupo:</strong> {alumno.grupo}
+        </p>
+        <p style={{ fontSize: "18px", marginBottom: "8px" }}>
+          <strong>Semestre:</strong> {alumno.semestre}
         </p>
         <p
           style={{

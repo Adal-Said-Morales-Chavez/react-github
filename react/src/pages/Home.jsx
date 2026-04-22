@@ -1,4 +1,5 @@
 import Contador from "../Contador";
+import PerfilResumen from "../components/PerfilResumen";
 
 function Home() {
   return (
@@ -16,6 +17,8 @@ function Home() {
       <p style={{ fontSize: "18px", marginBottom: "30px", color: "var(--text)" }}>
         Bienvenido a mi aplicación React con enrutamiento.
       </p>
+      <PerfilResumen />
+      <br />
       <Contador />
     </div>
   );
