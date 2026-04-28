@@ -44,6 +44,9 @@ function Navbar() {
       <NavLink to="/usuarios" style={getStyle}>
         👥 Usuarios
       </NavLink>
+      <NavLink to="/mapa" style={getStyle}>
+        🗺️ Mapa
+      </NavLink>
       <NavLink to="/contacto" style={getStyle}>
         ✉️ Contacto
       </NavLink>
