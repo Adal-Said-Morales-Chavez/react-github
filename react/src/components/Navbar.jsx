@@ -47,6 +47,9 @@ function Navbar() {
       <NavLink to="/mapa" style={getStyle}>
         🗺️ Mapa
       </NavLink>
+      <NavLink to="/ruta-google-maps" style={getStyle}>
+        📍 Ruta Google Maps
+      </NavLink>
       <NavLink to="/contacto" style={getStyle}>
         ✉️ Contacto
       </NavLink>
