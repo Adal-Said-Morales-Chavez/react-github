@@ -50,6 +50,9 @@ function Navbar() {
       <NavLink to="/ruta-google-maps" style={getStyle}>
         📍 Ruta Google Maps
       </NavLink>
+      <NavLink to="/drawing-map" style={getStyle}>
+        ✏️ Dibujar en Mapa
+      </NavLink>
       <NavLink to="/contacto" style={getStyle}>
         ✉️ Contacto
       </NavLink>

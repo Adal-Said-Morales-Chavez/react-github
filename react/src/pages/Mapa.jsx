@@ -1,5 +1,6 @@
-import { GoogleMap, LoadScript, Marker, InfoWindow } from "@react-google-maps/api";
+import { GoogleMap, Marker, InfoWindow } from "@react-google-maps/api";
 import { useState } from "react";
+import { useGoogleMaps } from "../components/GoogleMapsLoader";
 
 const containerStyle = {
   width: "100%",
@@ -16,6 +17,11 @@ const center = {
 
 function Mapa() {
   const [mostrarInfo, setMostrarInfo] = useState(false);
+  const isLoaded = useGoogleMaps();
+
+  if (!isLoaded) {
+    return <p style={{ padding: "40px", textAlign: "center" }}>Cargando mapa...</p>;
+  }
 
   return (
     <div style={styles.page}>
@@ -30,42 +36,40 @@ function Mapa() {
 
       {/* Map Card */}
       <div style={styles.card}>
-        <LoadScript googleMapsApiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}>
-          <GoogleMap
-            mapContainerStyle={containerStyle}
-            center={center}
-            zoom={13}
-            options={{
-              styles: darkMapStyles,
-              disableDefaultUI: false,
-              zoomControl: true,
-              streetViewControl: false,
-              mapTypeControl: false,
-              fullscreenControl: true,
-            }}
-          >
-            <Marker
-              position={center}
-              onClick={() => setMostrarInfo(true)}
-              title="Mazatlán"
-            />
+        <GoogleMap
+          mapContainerStyle={containerStyle}
+          center={center}
+          zoom={13}
+          options={{
+            styles: darkMapStyles,
+            disableDefaultUI: false,
+            zoomControl: true,
+            streetViewControl: false,
+            mapTypeControl: false,
+            fullscreenControl: true,
+          }}
+        >
+          <Marker
+            position={center}
+            onClick={() => setMostrarInfo(true)}
+            title="Mazatlán"
+          />
 
-            {mostrarInfo && (
-              <InfoWindow
-                position={center}
-                onCloseClick={() => setMostrarInfo(false)}
-              >
-                <div style={styles.infoWindow}>
-                  <h3 style={styles.infoTitle}>📍 Mazatlán</h3>
-                  <p style={styles.infoText}>Sinaloa, México</p>
-                  <p style={styles.infoCoords}>
-                    Lat: {center.lat} | Lng: {center.lng}
-                  </p>
-                </div>
-              </InfoWindow>
-            )}
-          </GoogleMap>
-        </LoadScript>
+          {mostrarInfo && (
+            <InfoWindow
+              position={center}
+              onCloseClick={() => setMostrarInfo(false)}
+            >
+              <div style={styles.infoWindow}>
+                <h3 style={styles.infoTitle}>📍 Mazatlán</h3>
+                <p style={styles.infoText}>Sinaloa, México</p>
+                <p style={styles.infoCoords}>
+                  Lat: {center.lat} | Lng: {center.lng}
+                </p>
+              </div>
+            </InfoWindow>
+          )}
+        </GoogleMap>
       </div>
 
       {/* Info Cards */}

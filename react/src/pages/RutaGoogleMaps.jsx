@@ -6,8 +6,9 @@ import {
   GoogleMap,
   Marker,
   DirectionsRenderer,
-  useJsApiLoader,
 } from "@react-google-maps/api";
+
+import { useGoogleMaps } from "../components/GoogleMapsLoader";
 
 // Coordenadas del punto de inicio: FIMAZ
 const origen = {
@@ -31,10 +32,8 @@ export default function RutaGoogleMaps() {
   // Estado donde guardamos la ruta
   const [directions, setDirections] = useState(null);
 
-  // Carga de la API de Google Maps
-  const { isLoaded } = useJsApiLoader({
-    googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
-  });
+  // Carga de la API de Google Maps (compartida)
+  const isLoaded = useGoogleMaps();
 
   // Función para calcular la ruta
   const calcularRuta = () => {
